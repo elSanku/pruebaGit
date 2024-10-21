@@ -1,0 +1,171 @@
+:root {
+    /* Definición de colores como variables CSS */
+    --color-principal: rgb(255, 196, 59);
+    --color-secundario: rgb(255, 223, 148);
+    --color-navegador: rgb(255, 198, 0);
+    --color-detalles: rgb(5, 46, 0);
+}
+
+body {
+    margin: 0; /* Elimina margen predeterminado del body */
+    font-family: "Bangers", system-ui; /* Fuente del cuerpo */
+    background-color: var(--color-secundario); /* Color de fondo */
+    display: flex; /* Utiliza flexbox para el layout */
+    flex-direction: column; /* Coloca los elementos en columna */
+    min-height: 100vh; /* Asegura que el body ocupe toda la altura de la vista */
+}
+
+/* Estilos Header */
+.header {
+    background-color: var(--color-principal); /* Color de fondo del header */
+    padding: 10px 20px; /* Espaciado interno */
+    display: flex; /* Utiliza flexbox */
+    align-items: center; /* Centra verticalmente */
+    justify-content: space-between; /* Espacio entre el logo y la nav */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0 5px 8px var(--color-detalles); /* Sombra */
+}
+
+.header__content {
+    display: flex; /* Flexbox para el contenido del header */
+    align-items: center; /* Centra verticalmente */
+    flex: 1; /* Permite que ocupe espacio disponible */
+    justify-content: space-between; /* Alinea logo y título */
+}
+
+.header__logo {
+    height: 50px; /* Altura del logo */
+}
+
+.header__titulo {
+    color: var(--color-detalles); /* Color del título */
+    margin: 0 10px; /* Espaciado entre el logo y el título */
+    text-align: center; /* Centra el texto del título */
+    flex: 1; /* Permite que el título ocupe espacio para centrarlo */
+}
+
+.header__nav {
+    display: flex; /* Flexbox para la navegación */
+    justify-content: flex-end; /* Alinea la navegación a la derecha */
+}
+
+.header__nav-link {
+    color: var(--color-detalles); /* Color de los enlaces */
+    text-decoration: none; /* Sin subrayado */
+    margin-left: 20px; /* Espaciado entre enlaces */
+    padding: 7px 10px; /* Espaciado interno de los enlaces */
+}
+
+.header__nav-link:hover {
+    background-color: var(--color-navegador); /* Color de fondo al pasar el mouse */
+    border-radius: 5px; /* Bordes redondeados en hover */
+    box-shadow: 5px 5px 8px var(--color-detalles); /* Sombra en hover */
+}
+
+/* Estilos Slider (Carrusel) */
+.slider-container {
+    display: flex; /* Flexbox para centrar el slider */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: auto; /* Altura automática */
+    margin: 15px 0; /* Margen superior e inferior */
+}
+
+.slider {
+    position: relative; /* Posicionamiento relativo para el slider */
+    max-width: 720px; /* Ancho máximo del slider */
+    overflow: hidden; /* Oculta el contenido que desborda */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 5px 5px 8px var(--color-detalles); /* Sombra */
+}
+
+.slider__slides {
+    display: flex; /* Flexbox para los slides */
+    transition: transform 0.5s ease; /* Transición suave */
+}
+
+.slider__slide {
+    min-width: 100%; /* Cada slide ocupa el 100% del ancho */
+}
+
+.slider__img {
+    width: 100%; /* Imagen ocupa todo el ancho del slide */
+    height: 100%; /* Imagen ocupa toda la altura del slide */
+}
+
+/* Estilos Main */
+.main-content {
+    flex: 1; /* Permite que el contenido principal ocupe espacio */
+    padding: 0rem 1rem 2rem 1rem; /* Espaciado interno */
+}
+
+.main-content__titulo {
+    text-align: center; /* Centra el título */
+    color: var(--color-detalles); /* Color del texto */
+    margin: 15px 0; /* Margen superior e inferior */
+}
+
+.main-content__pilares {
+    display: flex; /* Flexbox para los pilares */
+    justify-content: space-around; /* Espacio entre pilares */
+    margin: 20px 0; /* Margen superior e inferior */
+}
+
+.main-content__pilar {
+    text-align: center; /* Centra el texto de los pilares */
+    width: 30%; /* Ancho de los pilares */
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid var(--color-principal); /* Borde del pilar */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 5px 5px 8px var(--color-detalles); /* Sombra */
+    background-color: var(--color-principal); /* Color de fondo del pilar */
+}
+
+.main-content__texto,
+.main-content__icon {
+    color: var(--color-detalles); /* Color del texto y los iconos */
+}
+
+/* Estilo Footer */
+.footer {
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0px 0px 8px 5px var(--color-detalles); /* Sombra */
+    background-color: var(--color-principal); /* Color de fondo */
+    color: var(--color-detalles); /* Color del texto */
+    text-align: center; /* Centra el texto */
+    padding: 20px 0; /* Espaciado interno */
+}
+
+.footer__logo {
+    height: 40px; /* Altura del logo en el footer */
+    margin-bottom: 10px; /* Margen inferior */
+}
+
+/* Media Queries */
+@media (max-width: 480px) {
+    .header {
+        flex-direction: column; /* Coloca elementos en columna */
+        align-items: center; /* Centra todos los elementos */
+        text-align: center; /* Centrar texto del título */
+    }
+
+    .header__nav {
+        justify-content: center; /* Centra navegación */
+        margin-top: 10px; /* Espacio superior entre el logo y el título */
+    }
+
+    .header__nav-link {
+        margin: 5px; /* Espaciado entre enlaces */
+        text-align: center; /* Centra texto de los enlaces */
+    }
+
+    .main-content__pilares {
+        flex-direction: column; /* Cambia a columna en móviles */
+        align-items: center; /* Centrar elementos */
+    }
+
+    .main-content__pilar {
+        width: 90%; /* Aumentar el ancho en dispositivos pequeños */
+        margin-bottom: 20px; /* Espaciado entre pilares */
+    }
+}
