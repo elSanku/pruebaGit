@@ -1,0 +1,177 @@
+:root {
+    /* Definición de colores como variables CSS */
+    --color-principal: rgb(255, 196, 59);
+    --color-secundario: rgb(255, 223, 148);
+    --color-navegador: rgb(255, 198, 0);
+    --color-detalles: rgb(5, 46, 0);
+}
+
+body {
+    margin: 0; /* Elimina margen predeterminado del body */
+    font-family: "Bangers", system-ui; /* Fuente del cuerpo */
+    background-color: var(--color-secundario); /* Color de fondo */
+    display: grid; /* Utiliza grid para el layout */
+    grid-template-rows: auto 1fr auto; /* Filas para el header, contenido y footer */
+    min-height: 100vh; /* Asegura que el body ocupe toda la altura de la vista */
+}
+
+/* Estilos Header */
+.header {
+    background-color: var(--color-principal);
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px;
+    box-shadow: 0 5px 8px var(--color-detalles);
+}
+
+.header__content {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: space-between;
+}
+
+.header__logo {
+    height: 50px;
+}
+
+.header__titulo {
+    color: var(--color-detalles);
+    margin: 0 10px;
+    text-align: center;
+    flex: 1;
+}
+
+.header__nav {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.header__nav-link {
+    color: var(--color-detalles);
+    text-decoration: none;
+    margin-left: 20px;
+    padding: 7px 10px;
+}
+
+.header__nav-link:hover {
+    background-color: var(--color-navegador);
+    border-radius: 5px;
+    box-shadow: 5px 5px 8px var(--color-detalles);
+}
+
+/* Estilos Slider (Carrusel) */
+.hero-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    margin: 15px 0;
+}
+
+.hero-section__slider {
+    position: relative;
+    max-width: 800px; /* Ancho máximo del slider */
+    max-height: 400px; /* Altura máxima del slider */
+    overflow: hidden; /* Oculta el contenido que desborda */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 5px 5px 8px var(--color-detalles); /* Sombra */
+    display: flex;
+    justify-content: center;
+}
+
+.hero-section__slides {
+    display: flex; /* Flexbox para los slides */
+    align-items: center;
+    transition: transform 0.5s ease; /* Transición suave */
+}
+
+.hero-section__slide {
+    min-width: 100%; /* Cada slide ocupa el 100% del ancho */
+    align-items: center; /* Centra verticalmente */
+}
+
+.hero-section__img {
+    width: 100%; /* Imagen ocupa todo el ancho del slide */
+    height: 100%; /* Imagen ocupa toda la altura del slide */
+    object-fit: cover; /* Mantiene la relación de aspecto de la imagen y cubre el contenedor */
+}
+
+.hero-section__img img {
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    height: 100%; /* Ocupa toda la altura del contenedor */
+    object-fit: cover; /* Cubre el contenedor manteniendo la relación de aspecto */
+
+}
+
+/* Estilos Main */
+.main-content {
+    padding: 0rem 1rem 2rem 1rem;
+}
+
+.main-content__titulo {
+    text-align: center;
+    color: var(--color-detalles);
+    margin: 15px 0;
+}
+
+.main-content__pilares {
+    display: grid; /* Cambiar a grid */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Columnas responsivas */
+    gap: 20px; /* Espaciado entre pilares */
+    margin: 20px 0;
+}
+
+.main-content__pilar {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid var(--color-principal);
+    border-radius: 5px;
+    box-shadow: 5px 5px 8px var(--color-detalles);
+    background-color: var(--color-principal);
+}
+
+.main-content__texto,
+.main-content__icon {
+    color: var(--color-detalles);
+}
+
+/* Estilo Footer */
+.footer {
+    border-radius: 5px;
+    box-shadow: 0px 0px 8px 5px var(--color-detalles);
+    background-color: var(--color-principal);
+    color: var(--color-detalles);
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer__logo {
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+/* Media Queries */
+@media (max-width: 800px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .header__nav {
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .header__nav-link {
+        margin: 5px;
+        text-align: center;
+    }
+
+    .main-content__pilares {
+        grid-template-columns: 1fr; /* Coloca pilares en columna en móviles */
+    }
+}
